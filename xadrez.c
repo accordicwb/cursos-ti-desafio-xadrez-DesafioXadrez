@@ -1,53 +1,72 @@
 #include <stdio.h>
 
-// Desafio de Xadrez 
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+// Desafio de Xadrez
+// Objetivo: utilizar estruturas de repetição para simular
+// o movimento de três peças: Bispo, Torre e Rainha.
+
+// Cada peça usa uma estrutura de repetição diferente:
+// - Bispo  → while
+// - Torre  → for
+// - Rainha → do-while
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Implementação de Movimentação do Bispo utilizando While
-    // O bispo anda na diagonal
-    // Ele vai andar 5 casas na diagonal para cima e para a direita
 
-    int movimentoBispo = 5;  // número de casas que o bispo vai andar
-    int contador = 1;        // contador para o while
+    // =====================================================
+    //               MOVIMENTO DO BISPO (WHILE)
+    // =====================================================
+    // O bispo se move sempre na diagonal.
+    // Neste exemplo, ele vai andar 5 casas na diagonal
+    // para cima e para a direita.
 
-    printf("\n=== Movimento do BISPO ===\n");  
+    int movimentoBispo = 5;   // número total de casas
+    int contador = 1;         // controle do while
 
-    // Estrutura WHILE: repete enquanto a condição for verdadeira
+    printf("\n=== Movimento do BISPO ===\n");
+
+    // Estrutura WHILE: executa enquanto a condição for verdadeira
     while (contador <= movimentoBispo) {
-        printf("Cima, Direita\n");  // movimento do bispo (diagonal)
-        contador++;                 // incrementa o contador (senão o loop seria infinito)
+        printf("Cima, Direita\n");   // movimento diagonal
+        contador++;                  // incrementa para evitar loop infinito
     }
-    
-    // Implementação de Movimentação da Torre utilizando For
-    // A torre anda em linha reta, na horizontal ou vertical
-    // Ela vai andar 5 casas para a direita
 
-    int movimentoTorre = 5;  // variável que armazena o número de casas da torre
 
-    printf("=== Movimento da TORRE ===\n");  
+    // =====================================================
+    //               MOVIMENTO DA TORRE (FOR)
+    // =====================================================
+    // A torre anda em linha reta, horizontal ou vertical.
+    // Aqui ela vai andar 5 casas para a direita.
 
-    // Estrutura de repetição FOR: usada quando sabemos quantas vezes repetir
+    int movimentoTorre = 5;   // número de casas para mover
+
+    printf("\n=== Movimento da TORRE ===\n");
+
+    // Estrutura FOR: ideal quando sabemos exatamente
+    // quantas vezes queremos repetir a ação
     for (int i = 1; i <= movimentoTorre; i++) {
-        printf("Direita\n");  // imprime a direção do movimento
+        printf("Direita\n");
     }
 
-    // Implementação de Movimentação da Rainha utilizando Do-While
-    // A rainha pode andar em qualquer direção
-    // Ela vai andar 8 casas para a esquerda
 
-    int movimentoRainha = 8;  // número de casas que a rainha vai andar
-    int passo = 1;            // variável de controle do loop
+    // =====================================================
+    //              MOVIMENTO DA RAINHA (DO-WHILE)
+    // =====================================================
+    // A rainha pode andar em qualquer direção.
+    // Neste caso, ela andará 8 casas para a esquerda.
 
-    printf("\n=== Movimento da RAINHA ===\n"); 
+    int movimentoRainha = 8;  // número total de casas
+    int passo = 1;            // controle do loop
 
-    // Estrutura DO-WHILE: executa pelo menos uma vez antes de verificar a condição
+    printf("\n=== Movimento da RAINHA ===\n");
+
+    // Estrutura DO-WHILE: executa o bloco ao menos uma vez
     do {
-        printf("Esquerda\n");  // imprime a direção do movimento
-        passo++;               // incrementa o contador
-    } while (passo <= movimentoRainha);  // condição de repetição
+        printf("Esquerda\n");
+        passo++;              // incrementa o contador
+    } while (passo <= movimentoRainha);
 
 
+    // =====================================================
+    //                      FIM DO PROGRAMA
+    // =====================================================
     return 0;
 }
